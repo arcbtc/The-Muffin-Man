@@ -17,9 +17,9 @@ ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblit
 | MISO  | 21  | 19  |
 | MOSI  | 19  | 23  |
 | SCK  | 23 | 18  |
-| DC  | 18  | 02  |
+| DC  | 18  | 17  |
 | CS  | 24  | 05  |
-| RST  | 22 | 19  |
+| RST  | 22 | 16  |
 | T_CS  | 26  | 04  |
 | VCC (5V)  | 02  | 5v  |
 | GND  | 14/25  | GND  |
