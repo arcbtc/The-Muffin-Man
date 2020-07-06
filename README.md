@@ -10,8 +10,9 @@ ESP32 + 3.5 Inch LCD (the one used for the <a href="https://github.com/rootzoll/
 * x10 male-female jumper cables
 
 
- # Wiring:
+ # Wiring Guide:
 
+![ESP32s GPIO Map](https://i.imgur.com/tYgD3eo.png)
 ![ESP32s GPIO Map](https://i.imgur.com/PLP3YBG.jpg)
 
 
