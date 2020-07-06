@@ -4,13 +4,13 @@
 
 ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblitz">Raspiblitz</a> uses) LND node monitor. Keep your node locked down somewhere safe, but still have an easy way to check its status.
 
- # Hardware:
+ ## Hardware:
 * ESP32 NODE32S
 * 3.5 Inch TFT LCD
 * x10 male-female jumper cables
 
 
- # Wiring Guide:
+ ## Wiring Guide:
 
 | FUNCTION  | TFT LCD | ESP32 |
 | ------------- | ------------- | ------------- | 
@@ -29,7 +29,7 @@ ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblit
 ![ESP32s GPIO Map](https://i.imgur.com/PLP3YBG.jpg)
 
 
-# Installing arduino + libraries
+## Installing arduino + libraries
 
 Install the Arduino IDE,<br>
 https://www.arduino.cc/en/Main/Software
@@ -44,6 +44,6 @@ From "Manage Libraries" install,<br>
 - <a href="https://github.com/ricmoo/QRCode">QRCode</a>
 [a](https://i.imgur.com/mCfnhZN.png)
 
-# To do
+## To do
 Multinode support
 Telegram messaging on node error
