@@ -130,7 +130,7 @@ void get_display_info(){
     lv_label_set_text(label1, strinfopage.c_str());
 
     //TAB2
-    showQR(tab2, identity_pubkey, 9, 4);
+    showQR(tab2, identity_pubkey, 9, 4, 8);
 
     //TAB3
     label3 = lv_label_create(tab3, NULL);
@@ -156,7 +156,7 @@ void get_display_info(){
 //////////////SHOW QR CODE///////////////////////////////
 
 
-void showQR(lv_obj_t *obj, const char* strtoqr, int qrsize, int scale){
+void showQR(lv_obj_t *obj, const char* strtoqr, int qrsize, int scale, int padding){
     #define CANVAS_WIDTH  230
     #define CANVAS_HEIGHT  230
     
@@ -181,14 +181,14 @@ void showQR(lv_obj_t *obj, const char* strtoqr, int qrsize, int scale){
         if(qrcode_getModule(&qrcode, x, y)){  
          for(int i = 0; i < scale; i++){
           for(int g = 0; g < scale; g++){
-            lv_canvas_set_px(canvas, 7+x*scale+g, 7+y*scale+i, c0); //GHETTO AF, 7 IS THE QR PADDING
+            lv_canvas_set_px(canvas, padding+x*scale+g, padding+y*scale+i, c0);
           }
          }
         }
         else{
          for(int i = 0; i < scale; i++){
           for(int g = 0; g < scale; g++){
-           lv_canvas_set_px(canvas, 7+x*scale+g, 7+y*scale+i, c1);
+           lv_canvas_set_px(canvas, padding+x*scale+g, padding+y*scale+i, c1);
           }
          }
         }
@@ -220,7 +220,7 @@ static void event_handler(lv_obj_t * obj, lv_event_t event)
       static const char * btns[] ={"Close", ""};
       mbox1 = lv_msgbox_create(lv_scr_act(), NULL);
       lv_msgbox_set_text(mbox1, "");
-      showQR(mbox1, payment_request,14, 3);
+      showQR(mbox1, payment_request,12, 3, 15);
       lv_msgbox_add_btns(mbox1, btns);
       lv_obj_set_event_cb(mbox1, btn_event_handler);
       lv_obj_align(mbox1, NULL, LV_ALIGN_CENTER, 0, 0);   
