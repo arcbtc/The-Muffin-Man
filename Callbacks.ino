@@ -48,13 +48,25 @@ void req_invoice(){
 
 
 void get_display_info(){
+  const char* alias;
+  const char* identity_pubkey;
+  int num_active_channels;
+  int num_peers;
+  int block_height;
+  bool synced_to_chain;
+  const char* synched; 
+  const char* lndversion; 
+  const char* chain;
+  const char* network;
+
   //MAKE TABS
   lv_obj_t *tabview;
   tabview = lv_tabview_create(lv_scr_act(), NULL);
-  tab1 = lv_tabview_add_tab(tabview, "Home");
-  tab2 = lv_tabview_add_tab(tabview, "NodeID");
-  tab3 = lv_tabview_add_tab(tabview, "Invoice");
-  label1 = lv_label_create(tab1, NULL);
+  
+  lv_obj_t *tab1 = lv_tabview_add_tab(tabview, "Home");
+  lv_obj_t *tab2 = lv_tabview_add_tab(tabview, "NodeID");
+  lv_obj_t *tab3 = lv_tabview_add_tab(tabview, "Invoice");
+  lv_obj_t *label1 = lv_label_create(tab1, NULL);
   lv_label_set_text(label1, "Node info...");
   
   //CONNECT TO NODE AND GET INFO
