@@ -2,7 +2,7 @@
 
 # THE MUFFIN MAN, LND node monitor
 
-ESP32 + 3.5 Inch LCD (the one used for the <a href="https://github.com/rootzoll/raspiblitz">Raspiblitz</a>) LND node monitor. Keep your node locked down somewhere safe, but still have an easy way to check its status.
+ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblitz">Raspiblitz</a> uses) LND node monitor. Keep your node locked down somewhere safe, but still have an easy way to check its status.
 
  # Hardware:
 * ESP32 NODE32S
