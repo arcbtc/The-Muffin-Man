@@ -14,7 +14,6 @@ void loop() {
     lv_obj_clean(lv_scr_act());
     get_display_info();
     then = millis();
-    Serial.println("1 min passed");
   }
 
 }
