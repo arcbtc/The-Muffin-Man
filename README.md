@@ -11,7 +11,7 @@ ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblit
 
 
  ## Wiring Guide:
-<center>
+
 | FUNCTION  | TFT LCD | ESP32 |
 | ------------- | ------------- | ------------- | 
 | MISO  | 21  | 19  |
@@ -24,7 +24,8 @@ ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblit
 | VCC (5V)  | 02  | 5v  |
 | GND  | 14/25  | GND  |
 | T_IRQ  | 11  | 34  |
-</center>
+
+
 <img src="https://i.imgur.com/tYgD3eo.png">
 <img src="https://i.imgur.com/PLP3YBG.jpg">
 
