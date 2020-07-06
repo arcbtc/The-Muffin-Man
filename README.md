@@ -25,7 +25,7 @@ ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblit
 | GND  | 14/25  | GND  |
 | T_IRQ  | 11  | 34  |
 
-![ESP32s GPIO Map](https://i.imgur.com/tYgD3eo.png)
+<img align="right" src="https://i.imgur.com/tYgD3eo.png">
 ![ESP32s GPIO Map](https://i.imgur.com/PLP3YBG.jpg)
 
 
