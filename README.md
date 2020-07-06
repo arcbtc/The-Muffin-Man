@@ -12,7 +12,7 @@ ESP32 + 3.5 Inch LCD (the one used for the <a href="https://github.com/rootzoll/
 
  # Wiring:
 
-![ESP32s GPIO Map](https://i.imgur.com/iK3pCjt.jpg)
+![ESP32s GPIO Map](https://i.imgur.com/PLP3YBG.jpg)
 
 
 # Installing arduino + libraries
