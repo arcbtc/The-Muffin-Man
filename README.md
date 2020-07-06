@@ -14,18 +14,16 @@ ESP32 + 3.5 Inch LCD (the one used for the <a href="https://github.com/rootzoll/
 
 | FUNCTION  | TFT LCD | ESP32 |
 | ------------- | ------------- | ------------- | 
-| MISO  | Content Cell  | Content Cell  |
-| MOSI  | Content Cell  | Content Cell  |
-| SCK  | Content Cell  | Content Cell  |
-| DC  | Content Cell  | Content Cell  |
-| CS  | Content Cell  | Content Cell  |
-| RST  | Content Cell  | Content Cell  |
-| T_CS  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
+| MISO  | 21  | 19  |
+| MOSI  | 19  | 23  |
+| SCK  | 23 | 18  |
+| DC  | 18  | 02  |
+| CS  | 24  | 05  |
+| RST  | 22 | 19  |
+| T_CS  | 26  | 04  |
+| VCC (5V)  | 02  | 5v  |
+| GND  | 14/25  | GND  |
+| T_IRQ  | 11  | 34  |
 
 ![ESP32s GPIO Map](https://i.imgur.com/tYgD3eo.png)
 ![ESP32s GPIO Map](https://i.imgur.com/PLP3YBG.jpg)
