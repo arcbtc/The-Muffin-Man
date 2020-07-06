@@ -12,6 +12,11 @@ ESP32 + 3.5 Inch LCD (the one used for the <a href="https://github.com/rootzoll/
 
  # Wiring Guide:
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 ![ESP32s GPIO Map](https://i.imgur.com/tYgD3eo.png)
 ![ESP32s GPIO Map](https://i.imgur.com/PLP3YBG.jpg)
 
