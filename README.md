@@ -9,9 +9,8 @@ ESP32 + 3.5 Inch LCD (the one used for the <a href="https://github.com/rootzoll/
 * 3.5 Inch TFT LCD
 * x10 male-female jumper cables
 
-![ESP32 GPIO Map](https://i.imgur.com/PLP3YBG.jpg)
 
-* ESP32 DevKit V1
+ # Wiring:
 
 ![ESP32s GPIO Map](https://i.imgur.com/iK3pCjt.jpg)
 
