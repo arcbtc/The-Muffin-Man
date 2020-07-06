@@ -39,9 +39,9 @@ Install the ESP32 hardware,<br>
 https://github.com/espressif/arduino-esp32#installation-instructions
 
 From "Manage Libraries" install,<br>
-- <a href="https://github.com/lvgl/lv_arduino">lv_arduino</a> (replace the )
+- <a href="https://github.com/lvgl/lv_arduino">lv_arduino</a> (use config files in "libaries")
 - <a href="https://github.com/bblanchon/ArduinoJson">ArduinoJson</a>
-- <a href="https://github.com/Bodmer/TFT_eSPI">TFT_eSPI</a>
+- <a href="https://github.com/Bodmer/TFT_eSPI">TFT_eSPI</a> (use config files in "libaries")
 - <a href="https://github.com/ricmoo/QRCode">QRCode</a>
 [a](https://i.imgur.com/mCfnhZN.png)
 
