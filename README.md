@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/cs8LXEu.png" width="50%">
+<img src="https://i.imgur.com/cs8LXEu.png" width="200px">
 
-# The Muffin Man - LND node monitor
+# LND node monitor
 
