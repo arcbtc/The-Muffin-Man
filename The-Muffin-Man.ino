@@ -40,16 +40,7 @@ String pubkey;
 String totcapacity;
 const char* payment_request;
 const char* payment_hash;
-const char* alias;
-const char* identity_pubkey;
-int num_active_channels;
-int num_peers;
-int block_height;
-bool synced_to_chain;
-const char* synched; 
-const char* lndversion; 
-const char* chain;
-const char* network;
+
 String strinfopage;
 int invoicesats;
 String theqr;
@@ -65,9 +56,7 @@ lv_obj_t * label1;
 lv_obj_t * label2;
 lv_obj_t * label3;
 lv_obj_t * label4;
-lv_obj_t *tab1;
-lv_obj_t *tab2;
-lv_obj_t *tab3; 
+
 int screenWidth = 480;
 int screenHeight = 320;
 #if USE_LV_LOG != 0
