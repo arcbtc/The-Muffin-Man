@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/EZmCejT.png" width="400px"></p>
+<p align="center"><img src="https://i.imgur.com/Oy3qzQV.png" width="400px"></p>
 
 # THE MUFFIN MAN, LND node monitor
 
