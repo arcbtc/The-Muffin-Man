@@ -10,7 +10,7 @@ ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblit
  
  ## Hardware:
 * ESP32 NODE32S
-* 3.5 Inch TFT LCD
+* 3.5 Inch TFT LCD <a href="https://geni.us/raspiblitz-touchscreen">amazon</a>
 * x10 male-female jumper cables
 
 
