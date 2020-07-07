@@ -43,8 +43,8 @@ From "Manage Libraries" install,<br>
 - <a href="https://github.com/bblanchon/ArduinoJson">ArduinoJson</a>
 - <a href="https://github.com/Bodmer/TFT_eSPI">TFT_eSPI</a> (use config files in "libaries")
 - <a href="https://github.com/ricmoo/QRCode">QRCode</a>
-[a](https://i.imgur.com/mCfnhZN.png)
+<img src="https://i.imgur.com/mCfnhZN.png">
 
 ## To do
-Multinode support
-Telegram messaging on node error
+- Multinode support
+- Telegram messaging on node error
