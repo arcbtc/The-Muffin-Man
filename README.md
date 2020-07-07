@@ -4,6 +4,9 @@
 
 ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblitz">Raspiblitz</a> uses) LND node monitor. Keep your node locked down somewhere safe, but still have an easy way to check its status.
 
+ ## Tutorial:
+ <img src="https://i.imgur.com/NiCGlNh.png">
+ 
  ## Hardware:
 * ESP32 NODE32S
 * 3.5 Inch TFT LCD
