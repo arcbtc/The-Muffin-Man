@@ -6,7 +6,7 @@ ESP32 + 3.5 Inch LCD (the one the <a href="https://github.com/rootzoll/raspiblit
 
  ## Tutorial:
 
- [![muffinman](https://i.imgur.com/NiCGlNh.png)](https://www.youtube.com/playlist?list=PLPj3KCksGbSYcLQoQbRGAtuHnQ4U4mXeL)
+ [![muffinman](https://i.imgur.com/NiCGlNh.png)](https://www.youtube.com/watch?v=PAsIa6c8Zh4)
  
  ## Hardware:
 * ESP32 NODE32S
