@@ -16,7 +16,7 @@ char wifiSSID[] = "YOUR_WIFI";
 char wifiPASS[] = "YOUR_WIFI_PASS";
 
 //LND NODE ADDRESS, UNCOMMENT AND USE IPAddress IF CONNECTING TO IP
-//IPAddress server = {5,27,178,50}; 8180 //
+//IPAddress server = {192,168,1,50};
 const char*  server = "YOUR_NODES_ADDRESS"; 
 
 //LND MACAROONS
@@ -35,6 +35,7 @@ unsigned long then;
 unsigned long now;
 bool checker = false;
 const int httpsPort = 443;
+// SET TO THE REST PORT (DEFAULT: 8080)
 const int lndport = 443;
 String pubkey;
 String totcapacity;
