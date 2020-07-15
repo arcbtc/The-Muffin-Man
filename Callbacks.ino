@@ -15,7 +15,7 @@ void req_invoice(){
                    +"\", \"expiry\": \"1000\","+
                    +"\"private\": true}";
                  
-  client.print(String("POST ")+ "https://" + server +":"+ String(lndport) +"/v1/invoices HTTP/1.1\r\n" +
+  client.print(String("POST ")+ "https://" + server +":"+ String(lndport) + nodesuffix + "/v1/invoices HTTP/1.1\r\n" +
                  "Host: "  + server +":"+ String(lndport) +"\r\n" +
                  "User-Agent: ESP322\r\n" +
                  "Grpc-Metadata-macaroon:" + invoicemacaroon + "\r\n" +
@@ -84,7 +84,7 @@ void get_display_info(){
     lv_obj_align(mbox1, NULL, LV_ALIGN_CENTER, 0, 0); 
     return;   
   }
-  client.print(String("GET ")+ "https://" + server +":"+ String(lndport) +"/v1/getinfo HTTP/1.1\r\n" +
+  client.print(String("GET ")+ "https://" + server +":"+ String(lndport) + nodesuffix + "/v1/getinfo HTTP/1.1\r\n" +
                  "Host: "  + server +":"+ String(lndport) +"\r\n" +
                  "User-Agent: ESP322\r\n" +
                  "Grpc-Metadata-macaroon:" + readmacaroon + "\r\n" +
