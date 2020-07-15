@@ -18,6 +18,7 @@ char wifiPASS[] = "YOUR_WIFI_PASS";
 //LND NODE ADDRESS, UNCOMMENT AND USE IPAddress IF CONNECTING TO IP
 //IPAddress server = {5,27,178,50}; 8180 //
 const char*  server = "YOUR_NODES_ADDRESS"; 
+const char* nodesuffix = ""; //SOMETIMES SERVICES LIKE BTCPAYSERVER ADD EXTRA BITS ON THE LND URL, LIKE "/lnd-rest/btc", ADD THAT HERE!
 
 //LND MACAROONS
 String readmacaroon = "YOUR_READ_MAC";
