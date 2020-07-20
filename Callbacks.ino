@@ -14,7 +14,7 @@ void req_invoice(){
                    +"\", \"memo\": \""+ memo + String(random(1,1000)) 
                    +"\", \"expiry\": \"1000\","+
                    +"\"private\": true}";
-                 
+
   client.print(String("POST ")+ "https://" + server +":"+ String(lndport) + nodesuffix + "/v1/invoices HTTP/1.1\r\n" +
                  "Host: "  + server +":"+ String(lndport) +"\r\n" +
                  "User-Agent: ESP322\r\n" +
@@ -44,6 +44,8 @@ void req_invoice(){
 
 
 
+
+
 //////////////GET INFO / DISPLAY DATA///////////////////////////////
 
 
@@ -58,7 +60,9 @@ void get_display_info(){
   const char* lndversion; 
   const char* chain;
   const char* network;
-
+  int skipquote=0;
+  String line;
+  
   //MAKE TABS
   lv_obj_t *tabview;
   tabview = lv_tabview_create(lv_scr_act(), NULL);
@@ -71,6 +75,42 @@ void get_display_info(){
   
   //CONNECT TO NODE AND GET INFO
   WiFiClientSecure client;
+  if (!client.connect(quotehost, httpsPort)){
+    Serial.print("Problem connecting to quote server\n");
+    skipquote=1;
+  }
+  if(!skipquote) {
+  client.print(String("GET ")+ quoteurl +" HTTP/1.1\r\n" +
+                 "Connection: close\r\n" +
+                 "Content-Type: text/html\r\n" +
+                 "Host: "  + quotehost +"\r\n" +
+                 "User-Agent: ESP322\r\n" +
+                 "\n");
+    line = client.readStringUntil('\n');
+    while (client.connected()) {
+     String line = client.readStringUntil('\n');
+     if (line == "\r") {    
+       break;
+     }
+    }
+    char bitcoin_price_str[32] = {0};
+    char treeString[] = "rate_float\":";
+      client.find(treeString);   // 1st call USD
+      if (currency>0)  {
+        client.find(treeString); // 2nd call GBP
+      }
+      if (currency>1)  {
+        client.find(treeString); // 3rd call EUR
+      }
+      client.readBytesUntil('}', bitcoin_price_str, sizeof(bitcoin_price_str));
+      Serial.print("bitcoin_price: ");
+      Serial.println(bitcoin_price_str);
+
+      sscanf(bitcoin_price_str, "%f", &bitcoin_price);
+  }
+    client.stop();
+
+    ////////////////////////////////////////////////////////////////
   if (!client.connect(server, lndport)){
     lv_label_set_text(label1, "Node info...");
     static const char * btns[] ={"Close", ""};
@@ -91,7 +131,7 @@ void get_display_info(){
                  "Content-Type: application/json\r\n" +
                  "Connection: close\r\n" +
                  "\n");
-    String line = client.readStringUntil('\n');
+    line = client.readStringUntil('\n');
     while (client.connected()) {
      String line = client.readStringUntil('\n');
      if (line == "\r") {    
@@ -103,6 +143,8 @@ void get_display_info(){
     const size_t capacity = JSON_OBJECT_SIZE(3) + 620;
     DynamicJsonDocument doc(capacity);
     deserializeJson(doc, content);
+//      Serial.print("content: ");
+//      Serial.println(content);
     alias = doc["alias"];
     identity_pubkey = doc["identity_pubkey"]; 
     num_active_channels = doc["num_active_channels"]; 
@@ -110,24 +152,39 @@ void get_display_info(){
     block_height = doc["block_height"]; 
     synced_to_chain = doc["synced_to_chain"]; 
     if(synced_to_chain == true){
-      synched = " synched-";
+      synched = "synched-";
     }
     else{
-      synched = "(not synched)";
+      synched = "not synched-";
     }
     lndversion = doc["version"]; 
-    chain = doc["chains"][0]["chain"]; 
-    network = doc["chains"][0]["network"]; 
+    chain = doc["chains"][0]["chain"];
+    network = doc["chains"][0]["network"];
 
     //TAB1
-    strinfopage = "\n\n Alias: " + String(alias) + "\n\n " 
-    + String(chain) + " " + String(network) + String(synched) + String(block_height) + "\n " 
-    + "Peers: " + String(num_peers) + "\n " 
-    + "Active Channels: " + String(num_active_channels) + "\n "
-    + "Server: " + server + " Port: "+ lndport + "\n "
-    + "Version: " + String(lndversion)+ "\n\n "
-    + "ID: " + String(identity_pubkey).substring(0, 30) + "...";
+    strinfopage = "Alias: " + String(alias) + "\n" 
+    + String(synched) + String(block_height) + "\n" 
+    + "Peers: " + String(num_peers) + "\n" 
+    + "Active Channels: " + String(num_active_channels) + "\n"
+    + "Server: " + server + " Port: "+ lndport + "\n"
+    + "Version: " + String(lndversion)+ "\n"
+    + "ID: " + String(identity_pubkey).substring(0, 30) + "...\n";
+//    + "BTC: " + String(bitcoin_price)+ "\n";
     lv_label_set_text(label1, strinfopage.c_str());
+    
+////////////// try adding another label for the bitcoin price
+    String btc = String(bitcoin_price);
+    static lv_style_t style;
+    lv_style_init(&style);
+
+    lv_style_set_text_font(&style, LV_STATE_DEFAULT, &lv_font_montserrat_48);
+    lv_obj_t *labelB = lv_label_create(tab1, NULL);
+    lv_obj_add_style(labelB, LV_LABEL_PART_MAIN, &style);
+    lv_obj_set_auto_realign(labelB, true);
+//    lv_label_set_align(labelB, LV_LABEL_ALIGN_CENTER);
+    lv_obj_align(labelB,label1,LV_ALIGN_CENTER, 0,100);
+    lv_label_set_text(labelB, btc.c_str());
+
 
     //TAB2
     showQR(tab2, identity_pubkey, 9, 4, 8);

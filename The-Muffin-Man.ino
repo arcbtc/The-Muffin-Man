@@ -17,9 +17,9 @@ char wifiPASS[] = "YOUR_WIFI_PASS";
 
 //LND NODE ADDRESS, UNCOMMENT AND USE IPAddress IF CONNECTING TO IP
 //IPAddress server = {5,27,178,50}; 8180 //
-const char*  server = "YOUR_NODES_ADDRESS"; 
+const char*  server = "YOUR_NODES_ADDRESS";
 //ACCESSING LND THROUGH MIDDLEMAN SERVICES CAN ADD EXTRA BITS ON THE LND REST URL, LIKE BTCPAYSERVER ADDING "/lnd-rest/btc", ADD THAT HERE!
-const char* nodesuffix = ""; 
+const char* nodesuffix = "";
 
 //LND MACAROONS
 String readmacaroon = "YOUR_READ_MAC";
@@ -30,6 +30,10 @@ String invoicemacaroon = "YOUR_INVOICE_MAC";
 
 String memo = "Muffin Man "; //INVOICE MEMO SUFFIX
 
+const char*  quotehost = "api.coindesk.com"; 
+const char*  quoteurl  = "https://api.coindesk.com/v1/bpi/currentprice.json";
+int currency = 0;   //0=USD, 1=GBP, 2=EUR
+float bitcoin_price = 0;
 
 //////////////OTHER VARIABLES////////////////
 
